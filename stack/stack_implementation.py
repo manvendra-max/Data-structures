@@ -7,6 +7,9 @@ class Stack:
     
     def show_top(self) -> None:
          '''this will print top of stack'''
+         if self.top < 0:
+              print("the stack is empty")
+              return
          print(self.items[self.top])
     
     def push(self, item: int) -> None:
@@ -19,7 +22,7 @@ class Stack:
          print(f'{item} has been pushed to the stack')
     
     def pop(self) -> None:
-         if self.top <= 0:
+         if self.top < 0:
               print("the stack is empty")
               return 
          self.items.pop(self.top)
@@ -33,9 +36,8 @@ obj.push(1)
 obj.push(2)
 obj.pop()
 obj.pop()
-obj.pop()
+obj.show_top()
 obj.push(4)
+# obj.pop()
 obj.push(5)
-obj.push(0)
-obj.push(6)
-print(obj)
+# print(obj)
